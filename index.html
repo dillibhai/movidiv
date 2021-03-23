@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<style>
+
+
+    .maindiv{
+        height:400px;
+        width:800px;
+        margin-left: 250px;
+        margin-top: 120px;
+        border-radius: 10px ;
+        background-color: red;
+        position: relative;
+        
+    }
+    #movingdiv{
+        position: absolute;
+        bottom:100px;
+        height:200px;
+        align-items: center;
+        width: 50%;
+        background-color: blue;
+        border-radius: 10px ;
+        
+    } 
+    #movingdiv img{
+        height: 200px;
+        width: auto;
+        margin-left: 130px;
+    }
+</style>
+<body>
+    <div class="maindiv">
+        <div id="movingdiv">
+            <img src="image/pet-cat2.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var i =0;
+    var id = setInterval(Animate, 100);
+    function Animate(){
+        i = i +10;
+        if(i==410){
+            clearInterval(id);
+            setTimeout(location.reload(), 100);
+        }else{
+            var target = document.getElementById("movingdiv");
+    target.style.left = i + 'px';
+        }
+
+    }
+</script>
+</html>
+
